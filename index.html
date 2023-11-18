@@ -14,14 +14,27 @@
 </head>
 <body>
     <div id="app">
-        <ul>
-            <li v-for="(testo, i) in toDoList" :class="(toDoList[i].done==true) ? '' : 'text-decoration-line-through'">
-                {{toDoList[i].testo}}
-                <span @click="canc(i)" class="ms-3">
-                    <i class="fa-regular fa-circle-xmark"></i>
-                </span>
-            </li>
-        </ul>
+        <div class="container d-flex flex-column">
+            <h1 class="mt-5">TO DO LIST</h1>
+
+            <!-- input -->
+            <div class="d-flex">
+            <div @click="aggiungi()" id="add" class="btn btn-secondary mt-5">ADD</div>
+            <input id="input" type="text">
+            </div>
+
+            <!-- lista -->
+            <ul class="mt-5">
+                <!-- ciclo per list item -->
+                <li v-for="(testo, i) in toDoList" :class="(toDoList[i].done==false) ? '' : 'text-decoration-line-through'">
+                    {{toDoList[i].testo}}
+                    <!-- icona X cancella elemento -->
+                    <span @click="canc(i)" class="ms-3">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </span>
+                </li>
+            </ul>
+        </div>
     </div>
 
 

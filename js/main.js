@@ -25,6 +25,14 @@ const object = {
         canc(index) {
             this.toDoList.splice(index, 1);
             console.log("cliccato");
+        },
+        aggiungi() {
+            const element={
+                testo:document.getElementById("input").value,
+                done:false
+            };
+            this.toDoList.push(element);
+            document.getElementById("input").value='';
         }
     }
 };
