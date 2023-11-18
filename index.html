@@ -18,15 +18,15 @@
             <h1 class="mt-5">TO DO LIST</h1>
 
             <!-- input -->
-            <div class="d-flex">
-            <div @click="aggiungi()" id="add" class="btn btn-secondary mt-5">ADD</div>
+            <div class="d-flex mt-5">
+            <div @click="aggiungi()" id="add" class="btn btn-secondary me-2">ADD</div>
             <input id="input" type="text" @keyup.enter="aggiungi()">
             </div>
 
             <!-- lista -->
             <ul class="mt-5">
                 <!-- ciclo per list item -->
-                <li v-for="(testo, i) in toDoList" :class="(toDoList[i].done==false) ? '' : 'text-decoration-line-through'">
+                <li @click="clickDone(i)" v-for="(testo, i) in toDoList" :class="(toDoList[i].done==false) ? '' : 'text-decoration-line-through'">
                     {{toDoList[i].testo}}
                     <!-- icona X cancella elemento -->
                     <span @click="canc(i)" class="ms-3">

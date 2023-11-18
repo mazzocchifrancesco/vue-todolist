@@ -33,6 +33,16 @@ const object = {
             };
             this.toDoList.push(element);
             document.getElementById("input").value='';
+        },
+        clickDone(index) {
+            if (this.toDoList[index].done==true){
+                this.toDoList[index].done=false;
+
+            }
+            else {
+                this.toDoList[index].done=true;
+            }
+
         }
     }
 };
