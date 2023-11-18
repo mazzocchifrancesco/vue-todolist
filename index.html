@@ -14,7 +14,14 @@
 </head>
 <body>
     <div id="app">
-        <p v-for="(testo, i) in toDoList" :class="(toDoList[i].done==true) ? '' : 'text-decoration-line-through'">{{toDoList[i].testo}}</p>
+        <ul>
+            <li v-for="(testo, i) in toDoList" :class="(toDoList[i].done==true) ? '' : 'text-decoration-line-through'">
+                {{toDoList[i].testo}}
+                <span @click="canc(i)" class="ms-3">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </span>
+            </li>
+        </ul>
     </div>
 
 

@@ -20,6 +20,13 @@ const object = {
 
         }
     },
+    
+    methods: {
+        canc(index) {
+            this.toDoList.splice(index, 1);
+            console.log("cliccato");
+        }
+    }
 };
 
 createApp(object).mount('#app')
