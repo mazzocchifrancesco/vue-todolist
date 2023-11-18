@@ -13,6 +13,9 @@
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
+    <div id="app">
+        <p v-for="(testo, i) in toDoList" :class="(toDoList[i].done==true) ? '' : 'text-decoration-line-through'">{{toDoList[i].testo}}</p>
+    </div>
 
 
     
