@@ -20,7 +20,7 @@
             <!-- input -->
             <div class="d-flex">
             <div @click="aggiungi()" id="add" class="btn btn-secondary mt-5">ADD</div>
-            <input id="input" type="text">
+            <input id="input" type="text" @keyup.enter="aggiungi()">
             </div>
 
             <!-- lista -->
